@@ -1,0 +1,27 @@
+.responsive-img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	max-width: 100%;
+	height: auto;
+}
+@media screen and (max-width: 800px){
+	svg{
+		display: none;
+	}
+	form fieldset{
+		width: 300px !important;
+
+	}
+	body{
+		background: url(../img/wommm.svg);
+	}
+	form fieldset .icon.left {
+    left: 10px !important;
+}
+form fieldset input, form fieldset p{
+	width: 200px !important;
+}
+}
