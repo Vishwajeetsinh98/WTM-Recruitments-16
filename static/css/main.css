@@ -4,11 +4,11 @@
 	left: 0;
 	right: 0;
 	margin: auto;
-	max-width: 80%;
+	max-width: 100%;
 	height: auto;
 }
 @media screen and (max-width: 800px){
-	#wommm{
+	svg{
 		display: none;
 	}
 	form fieldset{

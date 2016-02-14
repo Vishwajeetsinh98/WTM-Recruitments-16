@@ -1,18 +1,460 @@
-<html >
+<html class="">
 <head>
-  
+  <script src="http://assets.codepen.io/assets/editor/live/console_runner-ac6f22d6f99e61f8e835261f461f1027.js"></script><meta charset="UTF-8"><meta name="robots" content="noindex">
+  <link rel="canonical" href="http://codepen.io/anon/pen/GoQwwb">
+  <link rel="stylesheet prefetch" href="http://codepen.io/assets/reset/reset.css">
   <meta name="description" content="WTM Recruitments 2016">
-  <meta name="author" content="Rishi Raj">
+    <meta name="author" content="Rishi Raj">
 
-  <meta name="viewport" content="user-scalable=no">
+    <meta name="viewport" content="user-scalable=no">
 
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/jquery.lazylinepainter.min.js"></script>
-    <script type="text/javascript" src="js/raphael.js"></script>
-    <script type="text/javascript" src="js/raphael.svg.js"></script>
-    <link rel="stylesheet" href="css/main.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+      <script type="text/javascript" src="/static/js/jquery.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.lazylinepainter.min.js"></script>
+    <script type="text/javascript" src="/static/js/raphael.js"></script>
+    <script type="text/javascript" src="/static/js/raphael.svg.js"></script>
+    <link rel="stylesheet" href="/static/css/main.css">
+    <title>WTM Recruitments 2016</title>
+<style class="cp-pen-styles">
+    body {
+      background-repeat: no-repeat;
+      background-position: center;
+      text-align: center;
+      background-color: #E3F2FD;
+      font-family: "Lato";
+    }
+    #wommm{
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+    body fieldset {
+      box-shadow: 0 8px 10px rgb(0,0,0,0.6);
+    }
+
+    body.error {
+      background: #f04000;
+    }
+    body.error fieldset {
+      box-shadow: 0 8px 10px rgb(0,0,0,0.6);
+    }
+
+    h1, h2 {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    h1 {
+      top: 44px;
+      color: white;
+
+      font-family: Lato;
+      font-size: 42px;
+    }
+
+    h2 {
+      top: 44px;
+      color: white;
+      font-size: 10px;
+      opacity: 0.7;
+    }
+
+    ul.items {
+      position: absolute;
+      width: 30px;
+      height: auto;
+      top: 50%;
+      left: -60px;
+      transform: translateY(-50%);
+    }
+    ul.items li {
+      width: 8px;
+      height: 8px;
+      margin: 10px 0;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.4;
+      cursor: pointer;
+    }
+    ul.items li.active {
+      opacity: 1;
+    }
+
+    form {
+      position: absolute;
+      width: 480px;
+      height: 80px;
+      top: 90%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    form fieldset {
+      position: absolute;
+      width: 500px;
+      height: 120px;
+      background: #f2f2f2;
+      border-radius: 5px;
+      opacity: 0;
+      transform: scale(0.2);
+      transition: all 0.4s ease-in-out;
+    }
+    form fieldset input, form fieldset p {
+      display: inline-block;
+      width: 300px;
+      margin-left: 50px;
+      color: #333333;
+      font-size: 16px;
+      letter-spacing: 1px;
+    }
+    form fieldset p {
+      margin-top: 22px;
+      text-align: center;
+    }
+    form fieldset input {
+      height: 50px;
+      margin-top: 36px;
+      border: none;
+      border-bottom: 2px solid teal;
+      background: #f2f2f2;
+      outline: none;
+    }
+    form fieldset .icon {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      top: 46px;
+      transition: all 0.4s ease;
+    }
+    form fieldset .icon i {
+      position: absolute;
+      display: block;
+    }
+    form fieldset .icon i::before, form fieldset .icon i::after {
+      position: absolute;
+      content: "";
+    }
+    form fieldset .icon.left {
+      left: 40px;
+    }
+    form fieldset .icon.right {
+      right: 10px;
+      cursor: pointer;
+    }
+    form fieldset .icon.button:hover {
+      background: #f2f2f2;
+      border-radius: 3px;
+      transition: all 0.4s ease;
+    }
+    form fieldset.enable {
+      z-index: 1;
+      opacity: 1;
+      transition: all 0.5s ease-out 0.2s;
+      transform: scale(1);
+      animation: enable 0.5s ease-out 0.2s;
+    }
+    form fieldset.disable {
+      opacity: 0;
+      transition: all 0.3s ease-in;
+      transform: translateY(120px) scale(0.9);
+    }
+
+    body.error fieldset {
+      transform-origin: 50% 100%;
+      animation: error 0.3s ease-out;
+    }
+
+    @keyframes enable {
+      0% {
+        opacity: 0;
+        transform: scale(0.2);
+      }
+      60% {
+        transform: scale(1.1);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    @keyframes error {
+      0%, 50%, 100% {
+        transform: rotate(0deg);
+      }
+      25% {
+        transform: rotate(-3deg);
+      }
+      75% {
+        transform: rotate(3deg);
+      }
+    }
+    /**
+     * Icons in CSS, long as f****
+     */
+    .icon .arrow {
+      width: 2px;
+      height: 17px;
+      top: 5px;
+      left: 14px;
+      background: #333333;
+    }
+    .icon .arrow::before {
+      width: 6px;
+      height: 6px;
+      bottom: -1px;
+      left: -3px;
+      border-color: #333333;
+      border-right: 2px solid;
+      border-bottom: 2px solid;
+      transform: rotate(45deg);
+    }
+
+    .icon .user {
+      width: 20px;
+      height: 10px;
+      bottom: 5px;
+      left: 5px;
+      box-shadow: 0 0 0 2px #333333 inset;
+      border-radius: 6px 6px 3px 3px;
+    }
+    .icon .user::before {
+      width: 10px;
+      height: 10px;
+      top: -9px;
+      left: 5px;
+      box-shadow: 0 0 0 2px #333333 inset;
+      border-radius: 50%;
+    }
+
+    .icon .letter {
+      width: 20px;
+      height: 12px;
+      top: 9px;
+      left: 5px;
+      box-shadow: 0 0 0 2px #333333 inset;
+      border-radius: 3px;
+    }
+    .icon .letter::before, .icon .letter::after {
+      width: 11px;
+      height: 2px;
+      top: 4px;
+      background: #333333;
+    }
+    .icon .letter::before {
+      left: 0;
+      transform: rotate(30deg);
+    }
+    .icon .letter::after {
+      right: 0;
+      transform: rotate(-30deg);
+    }
+
+    .icon .lock {
+      width: 20px;
+      height: 16px;
+      top: 9px;
+      left: 5px;
+      box-shadow: 0 0 0 2px #333333 inset;
+      border-radius: 3px;
+    }
+    .icon .lock::before {
+      width: 8px;
+      height: 8px;
+      top: -4px;
+      left: 4px;
+      border: 2px solid transparent;
+      border-top: 2px solid #333333;
+      border-right: 2px solid #333333;
+      border-radius: 50%;
+      transform: rotate(-45deg);
+    }
+    .icon .lock::after {
+      width: 6px;
+      height: 7px;
+      top: 4px;
+      left: 7px;
+      box-shadow: 0 0 0 2px #333333 inset;
+    }
+
+    .icon .heart {
+      width: 10px;
+      height: 10px;
+      top: 11px;
+      left: 7px;
+      background: #ff5233;
+      transform: rotate(45deg);
+    }
+    .icon .heart::before, .icon .heart::after {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ff5233;
+    }
+    .icon .heart::before {
+      left: -6px;
+    }
+    .icon .heart::after {
+      top: -6px;
+    }
+    .img-responsive{
+      max-width: 100%;
+      position: absolute;
+      left: 0;
+      right: 0;
+
+    }
+    .header{
+      font-size: 46px;
+      font-family: Lato;
+      
+
+
+    }
+    textarea{
+      margin-top: 13px;
+      border: none;
+      height: 80px;
+      width: 300px;
+    }
+    select{
+      margin-top: 20px;
+      background: #f2f2f2;
+      height: 80px;
+      font-size: 24px;
+      font-family: Lato;
+      border: none;
+      outline: 0;
+    }
+    .submit{
+      margin-top: 10px;
+      background: teal;
+    }
+</style>
+  <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
 </head>
-<body id="wommm">
+<body>
+  <div id="wommm"></div>
+
+  
+     <img src="/static/img/logo.png" class="responsive-img">
+        
+        <form id="target" method="post">
+          <ul class="items"></ul>
+          <fieldset class="username enable">
+            <div class="icon left"><i class="user"></i></div>
+            <input type="text" name="name" placeholder="Your Name"/>
+            <div class="icon right button"><i class="arrow"></i></div>
+          </fieldset>
+           <fieldset class="regNo">
+            <div class="icon left"><i class="lock"></i></div>
+            <input type="regNo" name="regNo" placeholder="Registration Number"/>
+            <div class="icon right button"><i class="arrow"></i></div>
+          </fieldset>
+          <fieldset class="email">
+            <div class="icon left"><i class="letter"></i></div>
+            <input type="email" name="email" placeholder="Email"/>
+            <div class="icon right button"><i class="arrow"></i></div>
+          </fieldset>
+          <fieldset class="mobno">
+            <div class="icon left"><i class="user"></i></div>
+            <input type="mobno" name="mobno" placeholder="Mobile Number"/>
+            <div class="icon right button"><i class="arrow"></i></div>
+          </fieldset>
+          <fieldset class="domain">
+            <div class="icon left"><i class="user"></i></div>
+            <select name="domain">
+            <option value="management">Management</option>
+            <option value="design">Design</option>
+            </select>
+            <div class="icon right button"><i class="arrow"></i></div>
+          </fieldset>
+          <fieldset class="why">
+            <div class="icon left"><i class="user"></i></div>
+           <textarea name="why" placeholder="Why GDG?"></textarea>
+            <div class="icon right button"></div>
+          </fieldset>
+          <fieldset class="thanks">
+          
+            <div class="icon left"><i class="heart"></i></div>
+            <p>Successfully Registered</p>
+           
+            <div class="icon right"><i class="heart"></i></div>
+          </fieldset>
+          
+        </form>   
+
+
+<script src="http://assets.codepen.io/assets/common/stopExecutionOnTimeout.js?t=1"></script>
+<script>
+var ct = 0;
+function init() {
+    for (var i = 0; i < count; i++) {
+        if (window.CP.shouldStopExecution(1)) {
+            break;
+        }
+        var ul = document.querySelector('ul.items'), li = document.createElement('li');
+        ul.appendChild(li);
+    }
+    ul.firstChild.classList.add('active');
+    window.CP.exitedLoop(1);
+}
+function next(target) {
+  
+    var input = target.previousElementSibling;
+    if (input.value === '') {
+        body.classList.add('error');
+    }
+    else if(!(/^[7-9][0-9]{9}$/.test($('input[name=mobno]').val()))&&ct===3){
+      body.classList.add('error');
+    }
+    else if((!/^[a-zA-Z\s]+$/.test($('input[name=name]').val()))&&ct===0){
+      body.classList.add('error');
+    }
+    else if(!(/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test($('input[name=email]').val()))&&ct===2) {
+      
+      body.classList.add('error');
+
+         
+    }
+    else {
+        body.classList.remove('error');
+        var enable = document.querySelector('form fieldset.enable'), nextEnable = enable.nextElementSibling;
+        enable.classList.remove('enable');
+        enable.classList.add('disable');
+        nextEnable.classList.add('enable');
+        var active = document.querySelector('ul.items li.active'), nextActive = active.nextElementSibling;
+        active.classList.remove('active');
+        nextActive.classList.add('active');
+        ct++;
+    }
+    console.log(nextActive);
+    if(ct==6){
+      $( "#target" ).submit();
+    }
+    
+}
+function keyDown(event) {
+    var key = event.keyCode, target = document.querySelector('fieldset.enable .button');
+    if (key == 13 || key == 9)
+        next(target);
+}
+var body = document.querySelector('body'), form = document.querySelector('form'), count = form.querySelectorAll('fieldset').length;
+window.onload = init;
+document.body.onmouseup = function (event) {
+    var target = event.target || event.toElement;
+    if (target.classList.contains('button'))
+        next(target);
+};
+
+document.addEventListener('keydown', keyDown, false);
+//# sourceURL=pen.js
+</script>
+<script src="http://codepen.io/assets/editor/live/css_live_reload_init.js"></script>
 <script type="text/javascript">
 
      /* 
@@ -844,7 +1286,7 @@ function line(){
  var sig = $('#wommm').lazylinepainter( 
  {
     "svgData": pathObj,
-    "strokeWidth": 1,
+    "strokeWidth": 3,
     "strokeColor": "teal"
  });
  sig.lazylinepainter('paint'); 
