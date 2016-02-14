@@ -69,7 +69,7 @@
       position: absolute;
       width: 30px;
       height: auto;
-      top: 50%;
+      top: 70%;
       left: -60px;
       transform: translateY(-50%);
     }
@@ -90,7 +90,7 @@
       position: absolute;
       width: 480px;
       height: 80px;
-      top: 90%;
+      top: 80%;
       left: 50%;
       transform: translate(-50%, -50%);
     }
@@ -349,35 +349,36 @@
           <fieldset class="username enable">
             <div class="icon left"><i class="user"></i></div>
             <input type="text" name="name" placeholder="Your Name"/>
-            <div onclick="keydown" class="icon right button"><i class="arrow"></i></div>
+            <div onclick="next()" class="icon right button"><i class="arrow"></i></div>
           </fieldset>
            <fieldset class="regNo">
             <div class="icon left"><i class="lock"></i></div>
             <input type="regNo" name="regNo" placeholder="Registration Number"/>
-            <div onclick="keydown" class="icon right button"><i class="arrow"></i></div>
+            <div onclick="next()" class="icon right button"><i class="arrow"></i></div>
           </fieldset>
           <fieldset class="email">
             <div class="icon left"><i class="letter"></i></div>
             <input type="email" name="email" placeholder="Email"/>
-            <div onclick="keydown" class="icon right button"><i class="arrow"></i></div>
+            <div onclick="next()" class="icon right button"><i class="arrow"></i></div>
           </fieldset>
           <fieldset class="mobno">
             <div class="icon left"><i class="user"></i></div>
             <input type="mobno" name="mobno" placeholder="Mobile Number"/>
-            <div onclick="keydown" class="icon right button"><i class="arrow"></i></div>
+            <div onclick="next()" class="icon right button"><i class="arrow"></i></div>
           </fieldset>
           <fieldset class="domain">
             <div class="icon left"><i class="user"></i></div>
             <select name="domain">
             <option value="management">Management</option>
             <option value="design">Design</option>
+            <option value="technical">Technical</option>
             </select>
-            <div onclick="keydown" class="icon right button"><i class="arrow"></i></div>
+            <div onclick="next()" class="icon right button"><i class="arrow"></i></div>
           </fieldset>
           <fieldset class="why">
             <div class="icon left"><i class="user"></i></div>
            <textarea name="why" placeholder="Why GDG?"></textarea>
-            <div onclick="keydown" class="icon right button"></div>
+            <div onclick="next()" class="icon right button"><i class="arrow"></i></div>
           </fieldset>
           <fieldset class="thanks">
           
@@ -411,6 +412,9 @@ function next(target) {
         body.classList.add('error');
     }
     else if(!(/^[7-9][0-9]{9}$/.test($('input[name=mobno]').val()))&&ct===3){
+      body.classList.add('error');
+    }
+    else if(!(/^1[1-4][a-z A-Z]{3}[0-9]{4}$/.test($('input[name=regNo]').val()))&&ct===1){
       body.classList.add('error');
     }
     else if((!/^[a-zA-Z\s]+$/.test($('input[name=name]').val()))&&ct===0){
