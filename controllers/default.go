@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"github.com/astaxie/beego"
-	"gdgvit-rec/models"
+	"wtm/models"
 	"github.com/astaxie/beego/orm"
 	"github.com/astaxie/beego/httplib"
 	"fmt"
