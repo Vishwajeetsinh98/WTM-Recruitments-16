@@ -30,7 +30,7 @@ func (c *MainController) Post() {
 	management := models.Management{Name: name, RegNo: regno, Email: email, MobileNo: mobno, Domain: domain, Why: why}
 	_, err := o.Insert(&management)
 	if err == nil {
-		message := "Congratulations, "+name+", you have successfully registered.%0A Our first round will be on 17th February.%0ADetails will be posted soon.%0AWTM | GDG-VIT"
+		message := "Congratulations, "+name+", you have successfully registered.%0A Our first round will be on 2nd March.%0ADetails will be posted soon.%0AWTM | GDG-VIT"
 		_, err := httplib.Get("https://control.msg91.com/api/sendhttp.php?authkey=81434A3rGba9dY75583ac07&mobiles="+mobno+"&message="+string(message)+"&sender=GDGVIT&route=4").String()
 		if err == nil {
 			c.Ctx.Redirect(302, "/")
