@@ -20,7 +20,7 @@
       background-repeat: no-repeat;
       background-position: center;
       text-align: center;
-      background-color: #333333;
+      background-color: #E3F2FD;
       font-family: "Lato";
     }
     #wommm{
