@@ -4,9 +4,8 @@
   <link rel="canonical" href="http://codepen.io/anon/pen/GoQwwb">
   <link rel="stylesheet prefetch" href="http://codepen.io/assets/reset/reset.css">
   <meta name="description" content="WTM Recruitments 2016">
-    <meta name="author" content="Rishi Raj">
-
-    <meta name="viewport" content="user-scalable=no">
+    <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
       <script type="text/javascript" src="js/jquery.js"></script>
@@ -90,7 +89,7 @@
       position: absolute;
       width: 480px;
       height: 80px;
-      top: 82%;
+      top: 84%;
       left: 50%;
       transform: translate(-50%, -50%);
     }
@@ -98,7 +97,7 @@
       position: absolute;
       width: 500px;
       height: 120px;
-      background: #f2f2f2;
+      background: teal;
       border-radius: 5px;
       opacity: 0;
       margin: auto;
