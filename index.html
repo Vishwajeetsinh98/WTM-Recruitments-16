@@ -27,7 +27,7 @@
       position: absolute;
       left: 0;
       right: 0;
-      top:1%;
+      top:0;
       margin: auto;
     }
     body fieldset {
@@ -352,22 +352,22 @@
           <fieldset class="username enable">
             <div class="icon left"><i class="user"></i></div>
             <input type="text" name="name" placeholder="Your Name"/>
-            <div onclick="next()" class="icon right button"><i class="arrow"></i></div>
+            <div onclick="next(target)" class="icon right button"><i class="arrow"></i></div>
           </fieldset>
            <fieldset class="regNo">
             <div class="icon left"><i class="lock"></i></div>
             <input type="regNo" name="regNo" placeholder="Registration Number"/>
-            <div onclick="next()" class="icon right button"><i class="arrow"></i></div>
+            <div onclick="next(target)" class="icon right button"><i class="arrow"></i></div>
           </fieldset>
           <fieldset class="email">
             <div class="icon left"><i class="letter"></i></div>
             <input type="email" name="email" placeholder="Email"/>
-            <div onclick="next()" class="icon right button"><i class="arrow"></i></div>
+            <div onclick="next(target)" class="icon right button"><i class="arrow"></i></div>
           </fieldset>
           <fieldset class="mobno">
             <div class="icon left"><i class="user"></i></div>
             <input type="mobno" name="mobno" placeholder="Mobile Number"/>
-            <div onclick="next()" class="icon right button"><i class="arrow"></i></div>
+            <div onclick="next(target)" class="icon right button"><i class="arrow"></i></div>
           </fieldset>
           <fieldset class="domain">
             <div class="icon left"><i class="user"></i></div>
@@ -376,11 +376,11 @@
             <option value="design">Design</option>
             <option value="technical">Technical</option>
             </select>
-            <div onclick="next()" class="icon right button"><i class="arrow"></i></div>
+            <div onclick="next(target)" class="icon right button"><i class="arrow"></i></div>
           </fieldset>
           <fieldset class="why">
             
-           <textarea name="why" placeholder="Why GDG?"></textarea>
+           <textarea name="why" placeholder="Why WTM?"></textarea>
             <div onclick="next()" class="icon right button"><i class="arrow"></i></div>
           </fieldset>
           <fieldset class="thanks">
@@ -417,7 +417,7 @@ function next(target) {
     else if(!(/^[7-9][0-9]{9}$/.test($('input[name=mobno]').val()))&&ct===3){
       body.classList.add('error');
     }
-    else if(!(/^1[1-4][a-z A-Z]{3}[0-9]{4}$/.test($('input[name=regNo]').val()))&&ct===1){
+    else if(!(/^1[1-5][a-z A-Z]{3}[0-9]{4}$/.test($('input[name=regNo]').val()))&&ct===1){
       body.classList.add('error');
     }
     else if((!/^[a-zA-Z\s]+$/.test($('input[name=name]').val()))&&ct===0){
