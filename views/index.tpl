@@ -1,10 +1,11 @@
 <html class="">
 <head>
-  <script src="http://assets.codepen.io/assets/editor/live/console_runner-ac6f22d6f99e61f8e835261f461f1027.js"></script><meta charset="UTF-8"><meta name="robots" content="noindex">
+  <script src="http://assets.codepen.io/assets/editor/live/console_runner-ac6f22d6f99e61f8e835261f461f1027.js"></script>
   <link rel="canonical" href="http://codepen.io/anon/pen/GoQwwb">
   <link rel="stylesheet prefetch" href="http://codepen.io/assets/reset/reset.css">
   <meta name="description" content="WTM Recruitments 2016">
-    <meta name="author" content="Rishi Raj">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="viewport" content="user-scalable=no">
 
@@ -20,24 +21,24 @@
       background-repeat: no-repeat;
       background-position: center;
       text-align: center;
-      background-color: #333333;
+      background-color: #f2f2f2;
       font-family: "Lato";
     }
     #wommm{
       position: absolute;
       left: 0;
       right: 0;
-      top:1%;
+      top:0;
       margin: auto;
     }
     body fieldset {
       box-shadow: 0 8px 10px rgb(0,0,0,0.6);
     }
 
-    body.error {
-      background: #f04000;
+    form input.error {
+      border-bottom: 2px solid red !important;
     }
-    body.error fieldset {
+    input.error fieldset {
       box-shadow: 0 8px 10px rgb(0,0,0,0.6);
     }
 
@@ -90,7 +91,7 @@
       position: absolute;
       width: 480px;
       height: 80px;
-      top: 82%;
+      top: 84%;
       left: 50%;
       transform: translate(-50%, -50%);
     }
@@ -98,11 +99,13 @@
       position: absolute;
       width: 500px;
       height: 120px;
-      background: #f2f2f2;
-      border-radius: 5px;
+      background: none;
+      border: 2px solid #00A99D;
+      border-radius: 8px;
       opacity: 0;
       margin: auto;
       left:0;
+      background: #fff;
       right: 0;
       transform: scale(0.2);
       transition: all 0.4s ease-in-out;
@@ -110,7 +113,7 @@
     form fieldset input, form fieldset p {
       display: inline-block;
       width: 300px;
-      margin-left: 50px;
+      margin-left: 16px;
       color: #333333;
       font-size: 16px;
       letter-spacing: 1px;
@@ -121,10 +124,12 @@
     }
     form fieldset input {
       height: 50px;
-      margin-top: 36px;
+      margin-top: 32px;
       border: none;
-      border-bottom: 2px solid teal;
-      background: #f2f2f2;
+      background: #fff;
+      border-bottom: 2px solid #004D40;
+      background: none;
+      padding: 3px;
       outline: none;
     }
     form fieldset .icon {
@@ -132,15 +137,8 @@
       width: 30px;
       height: 30px;
       top: 46px;
+      padding: 6px;
       transition: all 0.4s ease;
-    }
-    form fieldset .icon i {
-      position: absolute;
-      display: block;
-    }
-    form fieldset .icon i::before, form fieldset .icon i::after {
-      position: absolute;
-      content: "";
     }
     form fieldset .icon.left {
       left: 20px;
@@ -167,7 +165,7 @@
       transform: translateY(120px) scale(0.9);
     }
 
-    body.error fieldset {
+    input.error  {
       transform-origin: 50% 100%;
       animation: error 0.3s ease-out;
     }
@@ -196,7 +194,7 @@
         transform: rotate(3deg);
       }
     }
-    /**
+     /**
      * Icons in CSS, long as f****
      */
     .icon .arrow {
@@ -216,7 +214,6 @@
       border-bottom: 2px solid;
       transform: rotate(45deg);
     }
-
     .icon .user {
       width: 20px;
       height: 10px;
@@ -233,7 +230,6 @@
       box-shadow: 0 0 0 2px #333333 inset;
       border-radius: 50%;
     }
-
     .icon .letter {
       width: 20px;
       height: 12px;
@@ -256,7 +252,6 @@
       right: 0;
       transform: rotate(-30deg);
     }
-
     .icon .lock {
       width: 20px;
       height: 16px;
@@ -283,7 +278,6 @@
       left: 7px;
       box-shadow: 0 0 0 2px #333333 inset;
     }
-
     .icon .heart {
       width: 10px;
       height: 10px;
@@ -326,7 +320,7 @@
     }
     select{
       margin-top: 20px;
-      background: #f2f2f2;
+      background: #fff;
       height: 80px;
       font-size: 24px;
       font-family: Lato;
@@ -335,73 +329,69 @@
     }
     .submit{
       margin-top: 10px;
-      background: teal;
+      background: #00A99D;
+    }
+    .teal{
+      color: teal;
+    }
+    .fa{
+      color: #00A99D;
     }
 </style>
   <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body>
   <div id="wommm"></div>
 
   
-     <img src="/static/img/logo.png" class="responsive-img">
-        
-        <form id="target" method="post">
+     <img src="/static/img/logo.png" class="responsive-img"/>
+     <form id="target" method="post">
           <ul class="items"></ul>
           <fieldset class="username enable">
-            <div class="icon left"><i class="user"></i></div>
+            <div class="icon left"><i class="fa  fa-2x fa-user"></i></div>
             <input type="text" name="name" placeholder="Your Name"/>
-
-            <div onclick="next()" class="icon right button"><i class="arrow"></i></div>
-
+            <div onclick="next(this)" class="icon right button"><i class="fa fa-2x fa-arrow-down"></i></div>
           </fieldset>
            <fieldset class="regNo">
-            <div class="icon left"><i class="lock"></i></div>
+            <div class="icon left"><i class="fa fa-lock fa-2x"></i></div>
             <input type="regNo" name="regNo" placeholder="Registration Number"/>
-
-            <div onclick="next()" class="icon right button"><i class="arrow"></i></div>
-
+            <div onclick="next(this)" class="icon right button"><i class="fa fa-2x fa-arrow-down"></i></div>
           </fieldset>
           <fieldset class="email">
-            <div class="icon left"><i class="letter"></i></div>
+            <div class="icon left"><i class="fa fa-envelope fa-2x"></i></div>
             <input type="email" name="email" placeholder="Email"/>
-
-            <div onclick="next()" class="icon right button"><i class="arrow"></i></div>
-
+            <div onclick="next(this)" class="icon right button"><i class="fa fa-2x fa-arrow-down"></i></div>
           </fieldset>
           <fieldset class="mobno">
-            <div class="icon left"><i class="user"></i></div>
+            <div class="icon left"><i class="fa fa-2x fa-user"></i></div>
             <input type="mobno" name="mobno" placeholder="Mobile Number"/>
-
-            <div onclick="next()" class="icon right button"><i class="arrow"></i></div>
-
+            <div onclick="next(this)" class="icon right button"><i class="fa fa-2x fa-arrow-down"></i></div>
           </fieldset>
+
           <fieldset class="domain">
-            <div class="icon left"><i class="user"></i></div>
+            <div class="icon left"><i class="fa fa-2x fa-user"></i></div>
             <select name="domain">
             <option value="management">Management</option>
             <option value="design">Design</option>
             <option value="technical">Technical</option>
             </select>
-            <div onclick="next()" class="icon right button"><i class="arrow"></i></div>
-
+            <div onclick="next(this)" class="icon right button"><i class="fa fa-2x fa-arrow-down"></i></div>
           </fieldset>
           <fieldset class="why">
-            <div class="icon left"><i class="user"></i></div>
-           <textarea name="why" placeholder="Why GDG?"></textarea>
-            <div onclick="next()" class="icon right button"><i class="arrow"></i></div>
-
+            
+           <input stlye="width:130px !important;height:80px !important;"name="why" placeholder="Why WTM?"></input>
+            <div onclick="next(this)" class="icon right button"><i class="fa fa-2x fa-arrow-down"></i></div>
           </fieldset>
           <fieldset class="thanks">
           
-            <div class="icon left"><i class="heart"></i></div>
+            <div class="icon left"><i class="fa fa-2x fa-heart"></i></div>
             <p>Successfully Registered</p>
            
-            <div class="icon right"><i class="heart"></i></div>
+            <div class="icon right"><i class="fa fa-2x fa-heart"></i></div>
           </fieldset>
           
-        </form>   
+        </form>     
 
 
 <script src="http://assets.codepen.io/assets/common/stopExecutionOnTimeout.js?t=1"></script>
@@ -422,25 +412,25 @@ function next(target) {
   
     var input = target.previousElementSibling;
     if (input.value === '') {
-        body.classList.add('error');
+        input.classList.add('error');
     }
     else if(!(/^[7-9][0-9]{9}$/.test($('input[name=mobno]').val()))&&ct===3){
-      body.classList.add('error');
+      input.classList.add('error');
     }
-    else if(!(/^1[1-4][a-z A-Z]{3}[0-9]{4}$/.test($('input[name=regNo]').val()))&&ct===1){
-      body.classList.add('error');
+    else if(!(/^1[1-5][a-z A-Z]{3}[0-9]{4}$/.test($('input[name=regNo]').val()))&&ct===1){
+      input.classList.add('error');
     }
     else if((!/^[a-zA-Z\s]+$/.test($('input[name=name]').val()))&&ct===0){
-      body.classList.add('error');
+      input.classList.add('error');
     }
     else if(!(/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test($('input[name=email]').val()))&&ct===2) {
       
-      body.classList.add('error');
+      input.classList.add('error');
 
          
     }
     else {
-        body.classList.remove('error');
+        input.classList.remove('error');
         var enable = document.querySelector('form fieldset.enable'), nextEnable = enable.nextElementSibling;
         enable.classList.remove('enable');
         enable.classList.add('disable');
@@ -858,7 +848,6 @@ var pathObj = {
             {
                 "path": "M408.5,569.2c-1.5,0.6-3.2,1-4.9,1  c-7,0-12.6-5.7-12.6-12.6s5.7-12.6,12.6-12.6c7,0,12.6,5.7,12.6,12.6c0,2.1-0.5,4.2-1.5,5.9",
                 "duration": 100
-
             },
             {
                 "path": "M426.3,499.1c-3.7-7.4-11.3-12.6-20.2-12.8  c-3.5-2-7.5-3.2-11.8-3.2c-0.8,0-1.6,0-2.4,0.1c-2.8-4.4-7.6-7.3-13.2-7.3c-3.8,0-7.3,1.4-10,3.7c-2.4-2.7-6-4.4-9.9-4.4  c-7.2,0-13.1,5.9-13.1,13.1c0,0.7,0.1,1.4,0.2,2.1c-0.1,0-0.1,0-0.2,0c-7.3,0-13.3,6-13.3,13.3c0,3.3,1.2,6.2,3.1,8.5  c0,0,0.1,0,0.1,0c0,0,0.1,0,0.1,0c0.1,0,0.2,0,0.2,0c-0.1,0-0.1,0-0.1,0c0,0-0.2,0-0.2,0c-9.2,1.7-16.4,9.7-16.4,19.4  c0,2.6,0.2,5,1.2,7.3v0c0,0,0.1,0.1,0.1,0.1c0,0,0,0,0,0c-0.8,1.7-1.3,3.7-1.3,5.8c0,7.3,5.9,13.2,13.2,13.2c5.2,0,9.7-3,11.9-7.4  c2.9-0.8,5.5-2.3,7.7-4.3c0,0,0,0,0.1-0.1c0.1,0,0.1,0,0.2,0.1c1.5,0.4,3.1,0.7,4.8,0.7c5.4,0,10.2-2.4,13.4-6.3c0.1,0,0.2,0,0.3,0  c8.2,0,15.4-4.5,19.1-11.2c1.4,0.3,2.8,0.4,4.3,0.4c0.2,0,0.5,0,0.7,0c2.8-0.1,5.6-0.7,8.1-1.7c-0.4,1.3-0.8,2.6-0.9,4  c-0.1,0.5-0.1,1.1-0.1,1.6c0,4.2,1.6,8.1,4.1,11.1",
@@ -866,7 +855,6 @@ var pathObj = {
             },
             {
                 "path": "M413.6,549.9c1.7,0.6,3.6,0.9,5.5,0.9  c1.9,0,3.6-0.3,5.3-0.9c0,0,0,0,0,0c1.2,2.6,3.8,4.5,6.9,4.5c4.1,0,7.6-3.3,7.6-7.4c4.2,0,7.6-3.4,7.6-7.7c0-4.2-3.5-7.7-7.7-7.7  c-1,0-2,0.2-2.9,0.6c-0.1-0.8-0.2-1.6-0.4-2.3c1.9-2.2,3-5,3-8.1c0-5.9-4.2-10.9-9.7-12.2c0-0.1,0-0.2,0-0.3c0-3.7-0.9-7.2-2.4-10.4  ",
-
                 "duration": 100
             },
             {
@@ -1284,7 +1272,6 @@ var pathObj = {
             {
                 "path": "M 352 683.5 L 416 683.5",
                 "duration": 100
-
             }
         ],
         "dimensions": {
@@ -1300,7 +1287,7 @@ var pathObj = {
  
  $(document).ready(function(){ 
  line();
- setInterval(line, 3000);
+ setInterval(line, 1000);
  });
 
 function line(){
@@ -1308,7 +1295,7 @@ function line(){
  {
     "svgData": pathObj,
     "strokeWidth": 3,
-    "strokeColor": "teal"
+    "strokeColor": "#00A99D"
  });
  sig.lazylinepainter('paint'); 
 }
