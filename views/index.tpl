@@ -1,25 +1,27 @@
 <html class="">
 <head>
-  <script src="http://assets.codepen.io/assets/editor/live/console_runner-ac6f22d6f99e61f8e835261f461f1027.js"></script><meta charset="UTF-8"><meta name="robots" content="noindex">
+  <script src="http://assets.codepen.io/assets/editor/live/console_runner-ac6f22d6f99e61f8e835261f461f1027.js"></script>
   <link rel="canonical" href="http://codepen.io/anon/pen/GoQwwb">
   <link rel="stylesheet prefetch" href="http://codepen.io/assets/reset/reset.css">
   <meta name="description" content="WTM Recruitments 2016">
     <meta name="author" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport" content="user-scalable=no">
 
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-      <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/jquery.lazylinepainter.min.js"></script>
-    <script type="text/javascript" src="js/raphael.js"></script>
-    <script type="text/javascript" src="js/raphael.svg.js"></script>
-    <link rel="stylesheet" href="css/main.css">
+      <script type="text/javascript" src="/static/js/jquery.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.lazylinepainter.min.js"></script>
+    <script type="text/javascript" src="/static/js/raphael.js"></script>
+    <script type="text/javascript" src="/static/js/raphael.svg.js"></script>
+    <link rel="stylesheet" href="/static/css/main.css">
     <title>WTM Recruitments 2016</title>
 <style class="cp-pen-styles">
     body {
       background-repeat: no-repeat;
       background-position: center;
       text-align: center;
-      background-color: #E3F2FD;
+      background-color: #f2f2f2;
       font-family: "Lato";
     }
     #wommm{
@@ -33,10 +35,10 @@
       box-shadow: 0 8px 10px rgb(0,0,0,0.6);
     }
 
-    body.error {
-      background: #f04000;
+    form input.error {
+      border-bottom: 2px solid red !important;
     }
-    body.error fieldset {
+    input.error fieldset {
       box-shadow: 0 8px 10px rgb(0,0,0,0.6);
     }
 
@@ -97,11 +99,13 @@
       position: absolute;
       width: 500px;
       height: 120px;
-      background: teal;
-      border-radius: 5px;
+      background: none;
+      border: 2px solid #00A99D;
+      border-radius: 8px;
       opacity: 0;
       margin: auto;
       left:0;
+      background: #fff;
       right: 0;
       transform: scale(0.2);
       transition: all 0.4s ease-in-out;
@@ -109,7 +113,7 @@
     form fieldset input, form fieldset p {
       display: inline-block;
       width: 300px;
-      margin-left: 50px;
+      margin-left: 16px;
       color: #333333;
       font-size: 16px;
       letter-spacing: 1px;
@@ -120,10 +124,12 @@
     }
     form fieldset input {
       height: 50px;
-      margin-top: 36px;
+      margin-top: 32px;
       border: none;
-      border-bottom: 2px solid teal;
-      background: #f2f2f2;
+      background: #fff;
+      border-bottom: 2px solid #004D40;
+      background: none;
+      padding: 3px;
       outline: none;
     }
     form fieldset .icon {
@@ -131,15 +137,8 @@
       width: 30px;
       height: 30px;
       top: 46px;
+      padding: 6px;
       transition: all 0.4s ease;
-    }
-    form fieldset .icon i {
-      position: absolute;
-      display: block;
-    }
-    form fieldset .icon i::before, form fieldset .icon i::after {
-      position: absolute;
-      content: "";
     }
     form fieldset .icon.left {
       left: 20px;
@@ -166,7 +165,7 @@
       transform: translateY(120px) scale(0.9);
     }
 
-    body.error fieldset {
+    input.error  {
       transform-origin: 50% 100%;
       animation: error 0.3s ease-out;
     }
@@ -195,7 +194,7 @@
         transform: rotate(3deg);
       }
     }
-    /**
+     /**
      * Icons in CSS, long as f****
      */
     .icon .arrow {
@@ -215,7 +214,6 @@
       border-bottom: 2px solid;
       transform: rotate(45deg);
     }
-
     .icon .user {
       width: 20px;
       height: 10px;
@@ -232,7 +230,6 @@
       box-shadow: 0 0 0 2px #333333 inset;
       border-radius: 50%;
     }
-
     .icon .letter {
       width: 20px;
       height: 12px;
@@ -255,7 +252,6 @@
       right: 0;
       transform: rotate(-30deg);
     }
-
     .icon .lock {
       width: 20px;
       height: 16px;
@@ -282,7 +278,6 @@
       left: 7px;
       box-shadow: 0 0 0 2px #333333 inset;
     }
-
     .icon .heart {
       width: 10px;
       height: 10px;
@@ -325,7 +320,7 @@
     }
     select{
       margin-top: 20px;
-      background: #f2f2f2;
+      background: #fff;
       height: 80px;
       font-size: 24px;
       font-family: Lato;
@@ -334,63 +329,69 @@
     }
     .submit{
       margin-top: 10px;
-      background: teal;
+      background: #00A99D;
+    }
+    .teal{
+      color: teal;
+    }
+    .fa{
+      color: #00A99D;
     }
 </style>
   <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body>
   <div id="wommm"></div>
 
   
-     <img src="img/logo.png" class="responsive-img">
-        
-        <form id="target" method="post">
+     <img src="/static/img/logo.png" class="responsive-img"/>
+     <form id="target" method="post">
           <ul class="items"></ul>
           <fieldset class="username enable">
-            <div class="icon left"><i class="user"></i></div>
+            <div class="icon left"><i class="fa  fa-2x fa-user"></i></div>
             <input type="text" name="name" placeholder="Your Name"/>
-            <div onclick="next(target)" class="icon right button"><i class="arrow"></i></div>
+            <div onclick="next(this)" class="icon right button"><i class="fa fa-2x fa-arrow-down"></i></div>
           </fieldset>
            <fieldset class="regNo">
-            <div class="icon left"><i class="lock"></i></div>
+            <div class="icon left"><i class="fa fa-lock fa-2x"></i></div>
             <input type="regNo" name="regNo" placeholder="Registration Number"/>
-            <div onclick="next(target)" class="icon right button"><i class="arrow"></i></div>
+            <div onclick="next(this)" class="icon right button"><i class="fa fa-2x fa-arrow-down"></i></div>
           </fieldset>
           <fieldset class="email">
-            <div class="icon left"><i class="letter"></i></div>
+            <div class="icon left"><i class="fa fa-envelope fa-2x"></i></div>
             <input type="email" name="email" placeholder="Email"/>
-            <div onclick="next(target)" class="icon right button"><i class="arrow"></i></div>
+            <div onclick="next(this)" class="icon right button"><i class="fa fa-2x fa-arrow-down"></i></div>
           </fieldset>
           <fieldset class="mobno">
-            <div class="icon left"><i class="user"></i></div>
+            <div class="icon left"><i class="fa fa-2x fa-user"></i></div>
             <input type="mobno" name="mobno" placeholder="Mobile Number"/>
-            <div onclick="next(target)" class="icon right button"><i class="arrow"></i></div>
+            <div onclick="next(this)" class="icon right button"><i class="fa fa-2x fa-arrow-down"></i></div>
           </fieldset>
+
           <fieldset class="domain">
-            <div class="icon left"><i class="user"></i></div>
+            <div class="icon left"><i class="fa fa-2x fa-user"></i></div>
             <select name="domain">
             <option value="management">Management</option>
             <option value="design">Design</option>
             <option value="technical">Technical</option>
             </select>
-            <div onclick="next(target)" class="icon right button"><i class="arrow"></i></div>
+            <div onclick="next(this)" class="icon right button"><i class="fa fa-2x fa-arrow-down"></i></div>
           </fieldset>
           <fieldset class="why">
             
-           <textarea name="why" placeholder="Why WTM?"></textarea>
-            <div onclick="next()" class="icon right button"><i class="arrow"></i></div>
+           <input stlye="width:130px !important;height:80px !important;"name="why" placeholder="Why WTM?"></input>
+            <div onclick="next(this)" class="icon right button"><i class="fa fa-2x fa-arrow-down"></i></div>
           </fieldset>
           <fieldset class="thanks">
           
-            <div class="icon left"><i class="heart"></i></div>
+            <div class="icon left"><i class="fa fa-2x fa-heart"></i></div>
             <p>Successfully Registered</p>
            
-            <div class="icon right"><i class="heart"></i></div>
+            <div class="icon right"><i class="fa fa-2x fa-heart"></i></div>
           </fieldset>
           
-        </form>   
+        </form>     
 
 
 <script src="http://assets.codepen.io/assets/common/stopExecutionOnTimeout.js?t=1"></script>
@@ -411,25 +412,25 @@ function next(target) {
   
     var input = target.previousElementSibling;
     if (input.value === '') {
-        body.classList.add('error');
+        input.classList.add('error');
     }
     else if(!(/^[7-9][0-9]{9}$/.test($('input[name=mobno]').val()))&&ct===3){
-      body.classList.add('error');
+      input.classList.add('error');
     }
     else if(!(/^1[1-5][a-z A-Z]{3}[0-9]{4}$/.test($('input[name=regNo]').val()))&&ct===1){
-      body.classList.add('error');
+      input.classList.add('error');
     }
     else if((!/^[a-zA-Z\s]+$/.test($('input[name=name]').val()))&&ct===0){
-      body.classList.add('error');
+      input.classList.add('error');
     }
     else if(!(/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test($('input[name=email]').val()))&&ct===2) {
       
-      body.classList.add('error');
+      input.classList.add('error');
 
          
     }
     else {
-        body.classList.remove('error');
+        input.classList.remove('error');
         var enable = document.querySelector('form fieldset.enable'), nextEnable = enable.nextElementSibling;
         enable.classList.remove('enable');
         enable.classList.add('disable');
@@ -1294,7 +1295,7 @@ function line(){
  {
     "svgData": pathObj,
     "strokeWidth": 3,
-    "strokeColor": "teal"
+    "strokeColor": "#00A99D"
  });
  sig.lazylinepainter('paint'); 
 }
