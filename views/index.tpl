@@ -345,7 +345,11 @@
   <div id="wommm"></div>
 
   
+<<<<<<< HEAD:views/index.tpl
      <img src="/static/img/logo.png" class="responsive-img"/>
+=======
+     <img src="img/logo.png" class="responsive-img"/>
+>>>>>>> master:index.html
      <form id="target" method="post">
           <ul class="items"></ul>
           <fieldset class="username enable">
