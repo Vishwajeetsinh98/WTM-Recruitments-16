@@ -34,12 +34,14 @@
     body fieldset {
       box-shadow: 0 8px 10px rgb(0,0,0,0.6);
     }
+
     form input.error {
       border-bottom: 2px solid red !important;
     }
     input.error fieldset {
       box-shadow: 0 8px 10px rgb(0,0,0,0.6);
     }
+
     h1, h2 {
       position: absolute;
       left: 50%;
@@ -48,18 +50,22 @@
       text-transform: uppercase;
       letter-spacing: 2px;
     }
+
     h1 {
       top: 44px;
       color: white;
+
       font-family: Lato;
       font-size: 42px;
     }
+
     h2 {
       top: 44px;
       color: white;
       font-size: 10px;
       opacity: 0.7;
     }
+
     ul.items {
       position: absolute;
       width: 30px;
@@ -80,6 +86,7 @@
     ul.items li.active {
       opacity: 1;
     }
+
     form {
       position: absolute;
       width: 480px;
@@ -125,10 +132,9 @@
       padding: 3px;
       outline: none;
     }
-    @media screen and (max-width:768px){
-      form fieldset input {
-        font-size:18px;
-      }
+    @media and screen (max-width:768px){
+    form fieldset input{
+    font-size:18px;
     }
     }
     form fieldset .icon {
@@ -163,10 +169,12 @@
       transition: all 0.3s ease-in;
       transform: translateY(120px) scale(0.9);
     }
+
     input.error  {
       transform-origin: 50% 100%;
       animation: error 0.3s ease-out;
     }
+
     @keyframes enable {
       0% {
         opacity: 0;
@@ -300,11 +308,14 @@
       position: absolute;
       left: 0;
       right: 0;
+
     }
     .header{
       font-size: 46px;
       font-family: Lato;
       
+
+
     }
     textarea{
       margin-top: 13px;
@@ -358,12 +369,12 @@
             <div onclick="next(this)" class="icon right button"><i class="fa fa-2x fa-arrow-down"></i></div>
           </fieldset>
           <fieldset class="mobno">
-            <div class="icon left"><i class="fa fa-2x fa-user"></i></div>
+            <div class="icon left"><i class="fa fa-2x fa-phone"></i></div>
             <input type="mobno" name="mobno" placeholder="Mobile Number"/>
             <div onclick="next(this)" class="icon right button"><i class="fa fa-2x fa-arrow-down"></i></div>
           </fieldset>
-
-          <!--<fieldset class="domain">
+<!--
+          <fieldset class="domain">
             <div class="icon left"><i class="fa fa-2x fa-user"></i></div>
             <select name="domain">
             <option value="management">Management</option>
@@ -376,8 +387,8 @@
             
            <input stlye="width:130px !important;height:80px !important;"name="why" placeholder="Why WTM?"></input>
             <div onclick="next(this)" class="icon right button"><i class="fa fa-2x fa-arrow-down"></i></div>
-          </fieldset>-->
-          <fieldset class="thanks">
+          </fieldset>
+          <fieldset class="thanks">-->
           
             <div class="icon left"><i class="fa fa-2x fa-heart"></i></div>
             <p>Successfully Registered</p>
@@ -420,6 +431,7 @@ function next(target) {
     else if(!(/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test($('input[name=email]').val()))&&ct===2) {
       
       input.classList.add('error');
+
          
     }
     else {
@@ -451,11 +463,13 @@ document.body.onmouseup = function (event) {
     if (target.classList.contains('button'))
         next(target);
 };
+
 document.addEventListener('keydown', keyDown, false);
 //# sourceURL=pen.js
 </script>
 <script src="http://codepen.io/assets/editor/live/css_live_reload_init.js"></script>
 <script type="text/javascript">
+
      /* 
  * Lazy Line Painter - Path Object 
  * Generated using 'SVG to Lazy Line Converter'
@@ -1280,6 +1294,7 @@ var pathObj = {
  line();
  setInterval(line, 1000);
  });
+
 function line(){
  var sig = $('#wommm').lazylinepainter( 
  {
@@ -1308,5 +1323,7 @@ b=function(){c.css({width:a.width,height:a.height});for(i=0;i<a.svgData.length;i
 "stroke-linejoin":a.strokeJoin?a.strokeJoin:c.strokeJoin}},n=function(c){var a=c.canvas,b=c.pathstr,e=c.duration,f=c.attr,k=c.callback,g;g="string"==typeof b?a.path(b).attr({stroke:"none",fill:"none"}):b;var l=a.path(g.getSubpath(0,1)).attr(f),m=g.getTotalLength(g);g.getPointAtLength(0);var n=(new Date).getTime(),q=setInterval(function(){var a=(new Date).getTime()-n,b=g.getSubpath(0,a/e*m);f.path=b;l.animate(f,25);a>=e&&(clearInterval(q),k!==p&&k(),g.remove())},25)};e.fn.lazylinepainter=function(c){if(l[c])return l[c].apply(this,
 Array.prototype.slice.call(arguments,1));if("object"===typeof c||!c)return l.init.apply(this,arguments)}})(jQuery,window);
       
+
+
 </script>
 </body></html>
