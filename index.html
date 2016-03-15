@@ -132,6 +132,12 @@
       padding: 3px;
       outline: none;
     }
+    @media screen and (max-width:768px){
+      form fieldset input {
+        font-size:18px;
+      }
+    }
+    }
     form fieldset .icon {
       position: absolute;
       width: 30px;
@@ -369,7 +375,7 @@
             <div onclick="next(this)" class="icon right button"><i class="fa fa-2x fa-arrow-down"></i></div>
           </fieldset>
 
-          <fieldset class="domain">
+          <!--<fieldset class="domain">
             <div class="icon left"><i class="fa fa-2x fa-user"></i></div>
             <select name="domain">
             <option value="management">Management</option>
@@ -382,7 +388,7 @@
             
            <input stlye="width:130px !important;height:80px !important;"name="why" placeholder="Why WTM?"></input>
             <div onclick="next(this)" class="icon right button"><i class="fa fa-2x fa-arrow-down"></i></div>
-          </fieldset>
+          </fieldset>-->
           <fieldset class="thanks">
           
             <div class="icon left"><i class="fa fa-2x fa-heart"></i></div>
@@ -441,7 +447,7 @@ function next(target) {
         ct++;
     }
     console.log(nextActive);
-    if(ct==6){
+    if(ct==4){
       $( "#target" ).submit();
     }
     
