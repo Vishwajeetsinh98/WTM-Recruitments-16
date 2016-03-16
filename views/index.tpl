@@ -15,7 +15,7 @@
     <script type="text/javascript" src="/static/js/raphael.js"></script>
     <script type="text/javascript" src="/static/js/raphael.svg.js"></script>
     <link rel="stylesheet" href="/static/css/main.css">
-    <title>WTM Recruitments 2016</title>
+    <title>WTM | IWD 2016</title>
 <style class="cp-pen-styles">
     body {
       background-repeat: no-repeat;
